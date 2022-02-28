@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+
+    <!-- jQuery -->
+    <script src="./assets/js/jquery.js" defer></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./assets/js/bootstrap.min.js" defer></script>
+
+    <script>
+
+        function clearForm() {
+
+            if (confirm('Are you sure? All fields will be reset!')) {
+                document.getElementById("register").reset();
+            }
+        }
+
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Wesley Cheung">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Core CSS -->
+    <link href="./assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="./assets/css/custom.css" rel="stylesheet">
+
+<head>
+	<title>Welcome!</title>
+	<link rel="stylesheet" href="./assets/css/custom.css">
+</head>
+<header>
+    <legend style="padding: 25px;font-size: 250%;margin-bottom: 150px; text-align: center"> Login</legend>
+</header>
+<body>
+<center>
+<div class="well" style="margin-right: 450px;margin-left: 450px">
+<form id="register" action="dashboard.php" method="post">
+            <fieldset>
+                Username*: <input type="text" name="username" required><br>
+                <br>
+                Password*: <input type="password" name="password" required>
+
+            </fieldset>
+
+            <br>
+
+            <input type="submit" value="Submit">
+            <input type="button" onclick="clearForm()" value="Clear entire form">
+            <input Type="button" VALUE="Return" onClick="window.location.href = './index.html'">
+        </form>
+</div>
+</center>
+</body>
+</html>

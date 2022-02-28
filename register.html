@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+
+    <!-- jQuery -->
+    <script src="./assets/js/jquery.js" defer></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./assets/js/bootstrap.min.js" defer></script>
+
+    <script>
+
+        function clearForm() {
+
+            if (confirm('Are you sure? All fields will be reset!')) {
+                document.getElementById("register").reset();
+            }
+        }
+
+        function check() {
+
+            if (confirm('Please check over the form and verify that all fields are correct!')) {
+                return true;
+            }
+            return false;
+
+        }
+
+        function check(input) {
+            if (input.value != document.getElementById('password').value) {
+                input.setCustomValidity('Password Must be Matching.');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+
+
+        function goBack() {
+            window.history.back();
+        }
+    }
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Wesley Cheung">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Core CSS -->
+    <link href="./assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="./assets/css/custom.css" rel="stylesheet">
+
+<head>
+	<title>Welcome!</title>
+	<link rel="stylesheet" href="./assets/css/custom.css">
+</head>
+<body>
+<header>
+    <legend style="padding: 25px;font-size: 250%;margin-bottom: 150px; text-align: center">Register Information</legend>
+</header>
+<center>
+<div class="well" style="">
+<form id="register" onsubmit="return check();" action="registration.php" method="post">
+            <div class="container">
+                Username: <input type="text" name="username" required>
+
+                Phone Number: <input type="text" name="phone" required><br>
+                <br>
+
+                Password: <input name="password" required="required" type="password" id="password" />
+
+                Confirm Password: <input name="password_confirm" required="required" type="password" id="password_confirm" oninput="check(this)" /><br>
+                <br>
+            </div>
+
+            <br>
+            <input type="submit" value="Submit">
+            <input type="button" onclick="clearForm()" value="Clear entire form">
+            <input Type="button" VALUE="Return" onClick="window.location.href = './index.html'">
+
+        </form>
+</div>
+</center>
+</body>
+</html>
